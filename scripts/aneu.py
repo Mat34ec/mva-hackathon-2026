@@ -49,20 +49,19 @@ def resolve_vcf(cli_value=None):
     env = os.environ.get("MVA_VCF")
     if env:
         return env
-    for guess in (
-        "WGS_EX2312012_HGWCNDSX7.vcf.gz",
-        os.path.join(os.environ.get("HOME", ""),
-                     "mnt/MVA Hackathon 2026 - Dataset",
-                     "WGS_EX2312012_HGWCNDSX7.vcf.gz"),
-    ):
-        if os.path.exists(guess):
-            return guess
-    hits = glob.glob("*.vcf.gz") + glob.glob("data/*.vcf.gz")
-    if hits:
-        return hits[0]
+    # No filename is hardcoded here. The proband accession is deliberately
+    # not published in this repository, so the dataset is located by pattern.
+    for pattern in ("*.vcf.gz", "data/*.vcf.gz",
+                    os.path.join(os.environ.get("MVA_DATA", ""), "*.vcf.gz")):
+        if not pattern.strip("*/."):
+            continue
+        hits = sorted(glob.glob(pattern))
+        if hits:
+            return hits[0]
     raise SystemExit(
-        "No VCF found. Pass --vcf PATH, or set MVA_VCF, or see DATA.md "
-        "for how to obtain the dataset under its access terms."
+        "No VCF found. Pass --vcf PATH, or set MVA_VCF to the file or "
+        "MVA_DATA to its folder. The dataset is controlled access and is "
+        "not included in this repository."
     )
 BIN = 10_000_000
 DP_HIST_MAX = 300

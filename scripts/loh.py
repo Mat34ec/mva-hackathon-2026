@@ -24,13 +24,18 @@ the same discriminator that settled the aneuploidy question, reused here
 on purpose so the two results rest on one logic.
 """
 import json
+import glob
 import os
 
 import numpy as np
 import pysam
 
-D = os.environ["HOME"] + "/mnt/MVA Hackathon 2026 - Dataset"
-VCF = D + "/WGS_EX2312012_HGWCNDSX7.vcf.gz"
+# The dataset is controlled access and the proband accession is not
+# published here. Set MVA_VCF to the file, or MVA_DATA to its folder.
+D = os.environ.get("MVA_DATA",
+                   os.environ.get("HOME", "") + "/mnt/MVA Hackathon 2026 - Dataset")
+_hits = sorted(glob.glob(os.path.join(D, "*.vcf.gz")))
+VCF = os.environ.get("MVA_VCF") or (_hits[0] if _hits else "")
 
 REGIONS = {
     "BUB1B":  ("15", 40158985, 40223137),

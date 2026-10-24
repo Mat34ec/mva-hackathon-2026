@@ -48,8 +48,8 @@ formats; any `data/`, `Dataset/`, `raw/` or `RESTRICTED*/` directory; all `.docx
 per-variant genotype tables derived from the genome, which are individual-level data even though they
 are plain text.
 
-Results committed here are **derived summaries only** — distributions, percentiles, per-chromosome
-statistics, counts — never per-variant genotypes, and never anything from the clinical document beyond
+Results committed here are **derived summaries only**, distributions, percentiles, per-chromosome
+statistics, counts, never per-variant genotypes, and never anything from the clinical document beyond
 mechanism-level statements.
 
 The two causal variants and the secondary findings appear in the Track 1 submission file and the

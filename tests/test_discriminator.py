@@ -7,7 +7,7 @@ contigs of known composition (tests/make_synthetic_vcf.py), runs the unmodified
 analysis code from scripts/aneu.py against it, and asserts that the method
 behaves as the reports claim.
 
-The claim under test, from Track 1 report §5 and Track 2 report §7:
+The claim under test, from Track 1 report section 5 and Track 2 report section 8:
 
     Depth alone cannot separate a real mosaic chromosome gain from paralogous
     mismapping. The shape of the heterozygous allele-balance distribution can,
@@ -153,7 +153,7 @@ def main():
     if bad:
         print(f"{bad} of {len(checks)} checks FAILED")
         return 1
-    print(f"all {len(checks)} checks passed — "
+    print(f"all {len(checks)} checks passed, "
           "the discriminator separates copy-number change from mismapping\n"
           "on contigs that are indistinguishable by depth.")
     return 0

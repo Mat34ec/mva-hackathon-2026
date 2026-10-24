@@ -1,9 +1,9 @@
-# MVA Hackathon 2026 — Tracks 1 and 2
+# MVA Hackathon 2026, Tracks 1 and 2
 
 Submission for **Rare Disease, Real Kid: The MVA Hackathon 2026**
 (Sage Bionetworks · MVA Society · Hugging Face).
 
-Participant **`Mat34ec`** · Proband `WGS_EX2312012` · GRCh38
+Participant **`Mat34ec`** · GRCh38
 
 > **No patient data is in this repository and none may be added.** The genome and clinical record
 > belong to a real, living child, released under a controlled-access protocol (WCG IRB #20252010).
@@ -38,7 +38,7 @@ paralogous mismapping) are given the **identical depth lift on purpose**:
 **Identical depth. Near-identical total spread. Forty-nine-fold apart on the discriminating statistic.**
 A gain duplicates either allele with equal probability, so it widens the distribution symmetrically;
 mismapping only ever adds reference-matching reads, so it widens the low side alone. `chrHEMI` returning
-exactly 0.500 shows the method does resolve a real one-copy change — the role chrX plays as a built-in
+exactly 0.500 shows the method does resolve a real one-copy change, the role chrX plays as a built-in
 positive control in the real analysis.
 
 Seven assertions, two of which would fail if the discriminator were secretly just reading depth.
@@ -48,12 +48,12 @@ Committed output: [`results/discriminator_validation.txt`](results/discriminator
 
 ## What this is
 
-**Track 1 — variant prediction.** *BUB1B* compound heterozygote, `NM_001211.6`:
+**Track 1, variant prediction.** *BUB1B* compound heterozygote, `NM_001211.6`:
 `c.2210T>G p.Leu737Ter` (nonsense, NMD-competent) in trans with `c.3006T>G p.Asn1002Lys` (missense,
 pseudokinase domain). Mosaic variegated aneuploidy type 1.
 → [`Mat34ec_track1_report.md`](Mat34ec_track1_report.md)
 
-**Track 2 — drug repurposing.** Mechanism characterization first, then five derisked candidate axes,
+**Track 2, drug repurposing.** Mechanism characterization first, then five derisked candidate axes,
 then the drugs this genome argues *against*. Lead candidate is nicotinamide, reaching BubR1 through
 NAD⁺ and SIRT2, with Phase 3 human chemoprevention evidence at the same dose in a cancer-prone
 population.
@@ -115,7 +115,7 @@ environment. `aneu.py` and `loh_scan.py` take `--vcf PATH` or read `$MVA_VCF`, s
 directory layout.
 
 ```bash
-export MVA_VCF=/path/to/WGS_EX2312012_HGWCNDSX7.vcf.gz
+export MVA_VCF=/path/to/proband.vcf.gz
 export ALPHAGENOME_API_KEY=...          # never commit this
 
 make panel                               # rebuild the panel from Ensembl
@@ -127,7 +127,7 @@ python3 scripts/atlas_percentile.py --gene BUB1B --mark "chr15:40220612:T>G=N100
 python3 scripts/atlas_decompose.py --gene BUB1B
 ```
 
-Full sequence with timings in [`Mat34ec_track1_report.md` §10](Mat34ec_track1_report.md). Everything
+Full sequence with timings in [`Mat34ec_track1_report.md` section 10](Mat34ec_track1_report.md). Everything
 runs on a consumer laptop; the expensive steps are API-bound, not compute-bound.
 
 SpliceAI needs its own environment, because it uses the Keras 2 API and the import fails outright under
@@ -152,8 +152,8 @@ content. Used for code authoring, literature retrieval, analytical design and ad
 author's own hypotheses. **Every quantitative claim in both reports derives from a script in this
 repository or from a named primary source; no figure is reported from model recall.** Three cases where
 checking a model-supplied claim against the primary source overturned it are recorded in
-[`Mat34ec_track2_report.md`](Mat34ec_track2_report.md) §10, and five cases where the pipeline's own
-first reading was wrong are in [`Mat34ec_track1_report.md`](Mat34ec_track1_report.md) §9.
+[`Mat34ec_track2_report.md`](Mat34ec_track2_report.md) section 10, and five cases where the pipeline's own
+first reading was wrong are in [`Mat34ec_track1_report.md`](Mat34ec_track1_report.md) section 9.
 
 ---
 
