@@ -1,12 +1,12 @@
 # ─────────────────────────────────────────────────────────────────────
-# PATIENT DATA — NEVER COMMIT
+# PATIENT DATA, NEVER COMMIT
 #
 # The hackathon data belongs to a real, living child and is shared under
 # a controlled-access protocol (WCG IRB #20252010). Participants agree to
 # delete all data after the hackathon and to notify Sage Bionetworks by
 # email. Nothing derived from it that could identify or re-identify the
-# individual may be published. These rules are not defaults — they are
-# the terms of access — so this file is deliberately aggressive and
+# individual may be published. These rules are not defaults, they are
+# the terms of access, so this file is deliberately aggressive and
 # denies by extension rather than by name.
 # ─────────────────────────────────────────────────────────────────────
 
