@@ -3,7 +3,7 @@
 Submission for **Rare Disease, Real Kid: The MVA Hackathon 2026**
 (Sage Bionetworks · MVA Society · Hugging Face).
 
-Participant **`Mat34ec`** · GRCh38
+Participant HF **`Mat34ec`** · GRCh38
 
 > **No patient data is in this repository and none may be added.** The genome and clinical record
 > belong to a real, living child, released under a controlled-access protocol (WCG IRB #20252010).
