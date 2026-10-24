@@ -1,0 +1,16 @@
+# Core analysis. Versions are the ones this work was run with.
+pysam>=0.22,<0.25
+numpy>=1.24
+
+# Needed only for the AlphaGenome layers (scripts/atlas_*.py,
+# scripts/score_*_alphagenome.py). Install per Google's instructions.
+# The API key goes in ALPHAGENOME_API_KEY, never in a file.
+#   alphagenome
+#   anndata>=0.10
+
+# SpliceAI runs in its own environment because it needs the Keras 2 API.
+# Under Keras 3 the import fails outright, so the pin is not optional:
+#   pip install spliceai "tensorflow-cpu>=2.13,<2.16" "keras>=2.13,<3"
+
+# The validation suite in tests/ needs only pysam and numpy, by design:
+# it must run for a reviewer who has neither the patient data nor an API key.

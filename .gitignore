@@ -1,0 +1,98 @@
+# ─────────────────────────────────────────────────────────────────────
+# PATIENT DATA — NEVER COMMIT
+#
+# The hackathon data belongs to a real, living child and is shared under
+# a controlled-access protocol (WCG IRB #20252010). Participants agree to
+# delete all data after the hackathon and to notify Sage Bionetworks by
+# email. Nothing derived from it that could identify or re-identify the
+# individual may be published. These rules are not defaults — they are
+# the terms of access — so this file is deliberately aggressive and
+# denies by extension rather than by name.
+# ─────────────────────────────────────────────────────────────────────
+
+# Raw sequence and variant data, by extension
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bai
+*.cram
+*.crai
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.tbi
+*.idx
+*.fa
+*.fasta
+*.fa.gz
+*.fasta.gz
+*.fai
+*.2bit
+
+# Any folder the dataset was unpacked into
+data/
+Dataset/
+dataset/
+raw/
+RESTRICTED*/
+restricted*/
+
+# Per-variant genotype tables derived from the patient's genome.
+# These are individual-level data even though they are plain text.
+mva_rare_coding_variants.tsv
+mva_prioritised_candidates.csv
+mva_genomewide_secondary_findings.csv
+panel_raw.vcf.gz*
+panel_variants.tsv
+panel_annotated.tsv
+candidates.tsv
+roh_regions.txt
+locus_all_variants.tsv
+context_1mb_variants.tsv
+patient_variants_avi.tsv
+slc34a1_locus.json
+aneu_parts.json
+loh_bins.json
+panel_pgx.json
+
+# Clinical documents
+*phenotype*.docx
+*Phenotype*.docx
+*.docx
+~$*
+
+# Credentials. API keys belong in the shell environment, never on disk.
+.env
+.env.*
+*.key
+*_api_key*
+*token*
+.netrc
+
+# Scratch and build noise
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*.log
+.venv/
+venv/
+env/
+
+
+# Generated test fixture. Rebuilt deterministically by `make validate`
+# (fixed seed), so it is regenerated rather than committed. The validation
+# OUTPUT is committed, at results/discriminator_validation.txt, so a reviewer
+# can see the result without running anything.
+tests/synthetic.vcf*
+aneu_parts.json
+loh_bins.json
+
+# NOT ignored, and intentionally so:
+#   mva_panel.GRCh38.*.bed         gene coordinates, public (Ensembl)
+#   mva_panel.GRCh38.provenance.tsv  provenance of those coordinates
+#   alphagenome_controls.tsv       synthetic control variants, not the patient's
+#   Mat34ec_track1_*.csv           the submission itself, 3 rows, required to be public

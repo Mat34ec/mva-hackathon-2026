@@ -1,0 +1,28 @@
+  chrNORM:     4,000 sites  dp_med  44.0  het_frac 0.620  ab_med 0.500  ab_iqr 0.100  outside40-60 0.176
+  chrGAIN:     4,000 sites  dp_med  51.0  het_frac 0.607  ab_med 0.500  ab_iqr 0.140  outside40-60 0.320
+  chrMAP:     4,000 sites  dp_med  51.0  het_frac 0.634  ab_med 0.435  ab_iqr 0.090  outside40-60 0.311
+  chrHEMI:     4,000 sites  dp_med  22.0  het_frac 0.044  ab_med 0.500  ab_iqr 0.140  outside40-60 0.314
+
+contig    truth                       dp  ratio   <0.40   >0.60    both  hi/lo
+chrNORM   clean diploid               44  1.000   0.084   0.092   0.176   1.10
+chrGAIN   mosaic trisomy, f=0.30      51  1.159   0.161   0.158   0.320   0.98
+chrMAP    paralogous mismapping       51  1.159   0.306   0.005   0.311   0.02
+chrHEMI   hemizygous                  22  0.500   0.160   0.154   0.314   0.96
+
+  [PASS] hemizygous contig detected at ~0.50 depth ratio
+         ratio=0.500
+  [PASS] depth alone CANNOT separate gain from mismapping
+         gain=1.159 map=1.159
+  [PASS] total spread alone CANNOT separate them either
+         gain=0.320 map=0.311
+  [PASS] true gain raises the HIGH tail above baseline
+         gain hi=0.158 vs norm hi=0.092
+  [PASS] mismapping leaves the HIGH tail at baseline
+         map hi=0.005 vs norm hi=0.092
+  [PASS] symmetry statistic separates gain from mismapping
+         gain hi/lo=0.98  map hi/lo=0.02
+  [PASS] clean diploid contig is symmetric and at baseline depth
+         ratio=1.000 hi/lo=1.10
+
+all 7 checks passed — the discriminator separates copy-number change from mismapping
+on contigs that are indistinguishable by depth.
