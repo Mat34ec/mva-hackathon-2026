@@ -168,3 +168,5 @@ this case can be reused for other undiagnosed individuals.
 
 To the child and family who chose to share a genome with strangers in the hope that someone could help.
 This work exists only because of that decision.
+
+This work was made possible through the Hackathon, organized by Sage Bionetworks in partnership with the MVA Society, Hugging Face, and BEACON (The Benchmarking, Evaluation, and Assessment Consortium for Science), with prize sponsorship from AWS and Anthropic.
