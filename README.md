@@ -7,7 +7,7 @@ Participant HF **`Mat34ec`** · GRCh38
 
 > **No patient data is in this repository and none may be added.** The genome and clinical record
 > belong to a real, living child, released under a controlled-access protocol (WCG IRB #20252010).
-> Read [`DATA.md`](DATA.md) before running anything. The `.gitignore` denies by file extension and
+> > The `.gitignore` denies by file extension and
 > directory rather than by filename, deliberately.
 
 ---
@@ -81,8 +81,7 @@ the right gene.
 ## Layout
 
 ```
-├── DATA.md                        access terms and the deletion obligation
-├── Makefile                       make validate | make panel | make clean
+├── validate.py                    make validate | make panel | make clean
 ├── Mat34ec_track1_report.md       Track 1 report + methods description
 ├── Mat34ec_track2_report.md       Track 2 report + methods description
 ├── Mat34ec_track1_panel-vep.csv   Track 1 submission file
@@ -110,7 +109,7 @@ the right gene.
 
 ## Running the real analyses
 
-These need the dataset ([`DATA.md`](DATA.md)) and, for the AlphaGenome layers, an API key in the
+These need the dataset and, for the AlphaGenome layers, an API key in the
 environment. `aneu.py` and `loh_scan.py` take `--vcf PATH` or read `$MVA_VCF`, so nothing hardcodes a
 directory layout.
 
